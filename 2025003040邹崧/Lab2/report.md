@@ -20,17 +20,34 @@
 5. 运行 App 到模拟器，确认界面正常显示。
 6. 截图并整理代码文件，提交到 GitHub。
 
-## 四、实验结果
+## 四、布局结构简要说明
+界面整体使用 **Column** 垂直布局，分为上下两部分：
+- 上半部分：`CardTop` 组件，包含 `Image`（头像）、`Text`（姓名和职位），内部用 `Column` 垂直嵌套。
+- 下半部分：`CardBottom` 组件，包含多个 `Divider`（分割线）和 `ContactRow`（联系方式行），`ContactRow` 内部用 `Row` 水平嵌套 `Icon` 和 `Text`。
+- 整体通过 `Column` + `Row` 嵌套实现垂直+水平的排版结构。
+
+## 五、遇到的问题和解决过程
+1. **问题**：`import` 语句报错 `Unresolved reference 'compose'`
+   - **解决**：修正为标准 Compose 导入格式，使用 `androidx.compose.ui` 等正确包名。
+2. **问题**：`fillSize()` 方法报错
+   - **解决**：替换为 `fillMaxSize()`，适配当前 Compose 版本。
+3. **问题**：`report.md` 自动变成 `report.md.txt`
+   - **解决**：开启 Windows「文件扩展名」显示，手动删除 `.txt` 后缀。
+4. **问题**：截图文件名 `Screenshot.png` 首字母大写，不符合作业要求
+   - **解决**：重命名为 `screenshot.png`（全小写）。
+
+## 六、实验结果
 成功实现电子名片界面，包含以下内容：
 - 姓名：邹崧
 - 职位：Android 开发者
 - 电话：2025003040
 - 邮箱：zousong@example.com
-- 深色背景 + 绿色图标，界面美观整洁
+- 社交账号：@zousong
+- 深色背景 + 绿色图标，界面美观整洁。
 
 App 可以正常编译、安装、启动与显示。
 
-## 五、实验总结
+## 七、实验总结
 通过本次实验，我掌握了 Android Studio 的基本操作，学会了使用 Jetpack Compose 编写简单界面，理解了常用布局组件和样式设置方法。能够独立完成项目创建、代码编写、运行调试与作业提交的完整流程。
 
 学号：2025003040
